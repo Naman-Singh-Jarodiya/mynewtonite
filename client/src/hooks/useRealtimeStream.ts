@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { getActorId } from '../api';
+import { getActorId, buildApiUrl } from '../api';
 
 export interface StreamEvent {
   event: string;
@@ -15,7 +15,8 @@ export function useRealtimeStream(onEvent: (event: string, data: any) => void) {
 
     function connect() {
       const actorId = getActorId();
-      const es = new EventSource(`/api/events/stream?actor_id=${encodeURIComponent(actorId)}`);
+      const streamUrl = buildApiUrl(`/api/events/stream?actor_id=${encodeURIComponent(actorId)}`);
+      const es = new EventSource(streamUrl);
       eventSourceRef.current = es;
 
       es.onopen = () => {
