@@ -1,0 +1,24 @@
+{
+  "name": "mynewtonite-operations-suite",
+  "version": "1.0.0",
+  "description": "myNewtonite Operations Under Pressure — Enterprise Workflow & Incident Orchestration Suite",
+  "private": true,
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "test": "npm --prefix server test",
+    "seed": "npm --prefix server run seed",
+    "build": "npm --prefix server run build && npm --prefix client run build"
+  },
+  "keywords": [
+    "operations",
+    "incident-management",
+    "concurrency-control",
+    "idempotency",
+    "outbox-pattern",
+    "state-machine"
+  ],
+  "author": "Naman Singh Jarodiya",
+  "license": "MIT"
+}
